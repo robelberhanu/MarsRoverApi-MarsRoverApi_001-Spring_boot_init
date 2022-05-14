@@ -5,5 +5,8 @@
     </head>
     <body>
         <h2> Welcome to the Mars Rover API Web App</h2>
+
+        <!-- thymeleaf forloop to create multiple containers for photos form Json Array. -->
+        <img th:each="photo : ${roverData.photos}" th:src="${photo.imgSrc}"/> 
     </body>
 </html>
