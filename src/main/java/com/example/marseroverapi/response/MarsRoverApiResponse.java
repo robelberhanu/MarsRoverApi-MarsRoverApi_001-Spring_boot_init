@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.marseroverapi.response;
 
 
 import java.util.ArrayList;

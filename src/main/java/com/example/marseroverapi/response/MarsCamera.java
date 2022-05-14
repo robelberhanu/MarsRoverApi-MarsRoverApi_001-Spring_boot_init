@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.marseroverapi.response;
 
 public class MarsCamera {
     private Long id;
