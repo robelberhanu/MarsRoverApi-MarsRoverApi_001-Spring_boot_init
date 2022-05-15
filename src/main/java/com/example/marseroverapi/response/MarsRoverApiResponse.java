@@ -11,13 +11,9 @@ public class MarsRoverApiResponse {
     public ArrayList<MarsPhoto> getPhotos() {
         return photos;
     }
-
-
     public void setPhotos(ArrayList<MarsPhoto> photos) {
         this.photos = photos;
     }
-
-
     @Override
     public String toString() {
         return "MarsRoverApiResponse [photos=" + photos + "]";
