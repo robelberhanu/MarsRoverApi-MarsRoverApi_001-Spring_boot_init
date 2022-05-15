@@ -1,13 +1,15 @@
 package com.example.marseroverapi.response;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import java.util.Date;
 
 public class MarsRover {
     private Long id;
     private String name;
-    @Jasonproperty("landing_date")
+    @JsonProperty("landing_date")
     private String landingDate;
-    @Jasonproperty("launch_date")
+    @JsonProperty("launch_date")
     private String launchDate;
 
 

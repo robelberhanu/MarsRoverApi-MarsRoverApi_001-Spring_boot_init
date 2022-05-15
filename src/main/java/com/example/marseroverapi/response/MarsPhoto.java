@@ -6,9 +6,9 @@ public class MarsPhoto {
     private Long id;
     private Integer sol;
     private MarsCamera camera;
-    @Jasonproperty("imgSrc")
+    @JsonProperty("img_src")
     private String imgSrc;
-    @Jasonproperty("earthDate")
+    @JsonProperty("earthDate")
     private String earthDate;
     private MarsRover rover;
 

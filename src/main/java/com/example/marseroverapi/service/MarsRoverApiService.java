@@ -13,7 +13,7 @@ public class MarsRoverApiService {
     public MarsRoverApiResponse getRoverData(){
         
         RestTemplate rt = new RestTemplate(); // a way to issue requests(GET, POST, PUT, DELETE..), take data and map it to our own objects. 
-		ResponseEntity<MarsRoverApiResponse> response = rt.getForEntity("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=2&api_key=DEMO_KEY", MarsRoverApiResponse.class );
+		ResponseEntity<MarsRoverApiResponse> response = rt.getForEntity("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=3&api_key=DEMO_KEY", MarsRoverApiResponse.class );
         
         return response.getBody();
     }

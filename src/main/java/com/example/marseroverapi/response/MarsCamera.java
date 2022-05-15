@@ -1,9 +1,13 @@
 package com.example.marseroverapi.response;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 public class MarsCamera {
     private Long id;
     private String name;
+    @JsonProperty("rover_id")
     private Integer roverId;
+    @JsonProperty("full_name")
     private String fullName;
     
     public Long getId() {
