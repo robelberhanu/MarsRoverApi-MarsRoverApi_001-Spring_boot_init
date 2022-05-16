@@ -1,5 +1,7 @@
 
 
-document.getElementById("curiosity").addEventListener('click', function(){
-    alert("curiosity clicked")
-})
+let marsApiButtons = document.querySelector("button[id*='marsApi']")
+
+marsApiButtons.forEach(button => button.addEventListener('click', function (){
+                                    alert("clicked!")
+                                }))
