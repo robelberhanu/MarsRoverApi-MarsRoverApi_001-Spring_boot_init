@@ -8,6 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import org.springframework.util.StringUtils;
 
 @Controller
 public class HomeController {
@@ -16,9 +20,16 @@ public class HomeController {
     private MarsRoverApiService roverService;
     
     @GetMapping("/")
-    public String getHome(ModelMap model){
+    public String getHome(ModelMap model,  @RequestParam String marsApiRoverData){
+        //if request param is empty, then set a default value
+        if(StringUtils.isEmpty(marsApiRoverData)){
+            marsApiRoverData = "opportunity";
+        }
         MarsRoverApiResponse roverData = roverService.getRoverData("spirit");
         model.put("roverData", roverData);
         return "index";
     }
-}
+
+
+    }
+

@@ -8,11 +8,14 @@
         <div class="container">
             <h2> Welcome to the Mars Rover API Web App</h2>
 
+          <form method="get" action="" id="frmRoverType">
+            <input type="hidden" id="marsApiRoverData" name="marsApiRoverData" value=""/>
             <div class="btn-group button-group-lg" role="group" style="margin: 2em 0em;">
                 <button type="button" class="btn btn-primary" id="marsApiCuriosity">Curiosity</button>
                 <button type="button" class="btn btn-primary" id="marsApiOpportunity">Opportunity</button>
                 <button type="button" class="btn btn-primary" id ="marsApiSpirit">Spirit</button>
-              </div>
+            </div>
+          </form>
 
             <div th:each="index : ${#numbers.sequence(0,roverData.photos.size(), 4)}" class="row" style="margin-bottom: 2em;">
                 <div class="col" th:if="${index < roverData.photos.size()}">
