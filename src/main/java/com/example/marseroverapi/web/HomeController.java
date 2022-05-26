@@ -1,5 +1,6 @@
 package com.example.marseroverapi.web;
 
+import com.example.marseroverapi.dto.HomeDto;
 import com.example.marseroverapi.response.MarsRoverApiResponse;
 import com.example.marseroverapi.service.MarsRoverApiService;
 
@@ -20,16 +21,17 @@ public class HomeController {
     private MarsRoverApiService roverService;
     
     @GetMapping("/")
-    public String getHome(ModelMap model,  @RequestParam (required = false)String marsApiRoverData, @RequestParam(required=false) Integer marsSol){
+    public String getHome(ModelMap model, HomeDto homeDto){
         //if request param is empty, then set a default value
-        if(StringUtils.isEmpty(marsApiRoverData)){
-            marsApiRoverData = "opportunity";
+        if(StringUtils.isEmpty(homeDto.getMarsApiRoverData())){
+            homeDto.setMarsApiRoverData("opportunity");
         }
-        if(marsSol == null)
-            marsSol = 1;
+        if(homeDto.getMarsApiRoverData() == null)
+            homeDto.setMarsSol(1); 
 
-        MarsRoverApiResponse roverData = roverService.getRoverData(marsApiRoverData, marsSol);
+        MarsRoverApiResponse roverData = roverService.getRoverData(homeDto.getMarsApiRoverData(), homeDto.getMarsSol());
         model.put("roverData", roverData);
+        model.put("homeDto", homeDto);
         return "index";
     }
 
