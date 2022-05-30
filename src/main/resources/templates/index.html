@@ -17,12 +17,59 @@
             </div>
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" th:field = "${homeDto.defaultCheck1}"/>
-                <label class="form-check-lable" for="defaultCheck1">
-                    Default checkbox
+                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraFhaz}"/>
+                <label class="form-check-lable" for="cameraFhaz">
+                    Front Hazard Avoidance Camera
                 </label>
             </div>
-
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraRhaz}"/>
+                <label class="form-check-lable" for="cameraRhaz">
+                    Rear Hazard Avoidance Camera                
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraMast}"/>
+                <label class="form-check-lable" for="cameraMast">
+                    Mast Camera                
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraChemcam}"/>
+                <label class="form-check-lable" for="cameraChemcam">
+                    Chemistry and Camera Complex                
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraMahli}"/>
+                <label class="form-check-lable" for="cameraMahli">
+                    Mars Hand Lens Imager                
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraMardi}"/>
+                <label class="form-check-lable" for="cameraMardi">
+                    Mars Descent Imager                
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraNavcam}"/>
+                <label class="form-check-lable" for="cameraNavcam">
+                    Navigation Camera                
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraPancam}"/>
+                <label class="form-check-lable" for="cameraPancam">
+                    Panoramic Camera                
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraMinites}"/>
+                <label class="form-check-lable" for="cameraMinites">
+                    Miniature Thermal Emission Spectrometer (Mini-TES)                
+                </label>
+            </div>
             <div class="form-group">
                 <label for="marsSol" class="col-form-lable col-form-lable-lg">Mars Sol(Mars Day)</label>
                 <input class="form-control form-control-lg" type="number" th:field = "${homeDto.marsSol}" min="0"/>
