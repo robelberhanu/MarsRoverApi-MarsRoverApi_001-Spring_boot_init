@@ -24,7 +24,7 @@ public class HomeController {
     public String getHome(ModelMap model, HomeDto homeDto){
         //if request param is empty, then set a default value
         if(StringUtils.isEmpty(homeDto.getMarsApiRoverData())){
-            homeDto.setMarsApiRoverData("opportunity");
+            homeDto.setMarsApiRoverData("Opportunity");
         }
         if(homeDto.getMarsApiRoverData() == null)
             homeDto.setMarsSol(1); 
