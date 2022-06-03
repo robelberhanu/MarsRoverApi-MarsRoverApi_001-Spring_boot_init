@@ -65,11 +65,12 @@
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraMinites}"/>
-                <label class="form-check-lable" for="cameraMinites1">
-                    Miniature Thermal Emission Spectrometer (Mini-TES)                
+                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraPancam}"/>
+                <label class="form-check-lable" for="cameraPancam1">
+                    Panoramic Camera                
                 </label>
             </div>
+          
             <div class="form-group">
                 <label for="marsSol" class="col-form-lable col-form-lable-lg">Mars Sol(Mars Day)</label>
                 <input class="form-control form-control-lg" type="number" th:field = "${homeDto.marsSol}" min="0"/>
