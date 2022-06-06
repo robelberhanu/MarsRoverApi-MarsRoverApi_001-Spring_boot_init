@@ -1,102 +1,129 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://thymeleaf.org">
-    <head>
-        <title>Mars Rover API</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" crossorigin="anonymous"/>
-    </head>
-    <body>
-        <div class="container">
-            <h2> Welcome to the Mars Rover API Web App</h2>
 
-          <form method="get" action="" id="frmRoverType">
-            <input type="hidden" th:field = "${homeDto.marsApiRoverData}"/>
+<head>
+    <title>Mars Rover API</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+        crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container">
+        <h2> Welcome to the Mars Rover API Web App</h2>
+
+        <form method="get" action="" id="frmRoverType">
+            <input type="hidden" th:field="${homeDto.marsApiRoverData}" />
             <div class="btn-group button-group-lg" role="group" style="margin: 2em 0em;">
                 <button type="button" class="btn btn-secondary" id="marsApiCuriosity">Curiosity</button>
                 <button type="button" class="btn btn-secondary" id="marsApiOpportunity">Opportunity</button>
-                <button type="button" class="btn btn-secondary" id ="marsApiSpirit">Spirit</button>
+                <button type="button" class="btn btn-secondary" id="marsApiSpirit">Spirit</button>
             </div>
 
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraFhaz}"/>
-                <label class="form-check-lable" for="cameraFhaz1">
-                    Front Hazard Avoidance Camera
-                </label>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraFhaz}" />
+                        <label class="form-check-lable" for="cameraFhaz1">
+                            Front Hazard Avoidance Camera
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraRhaz}" />
+                        <label class="form-check-lable" for="cameraRhaz1">
+                            Rear Hazard Avoidance Camera
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraMast}" />
+                        <label class="form-check-lable" for="cameraMast1">
+                            Mast Camera
+                        </label>
+                    </div>
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraRhaz}"/>
-                <label class="form-check-lable" for="cameraRhaz1">
-                    Rear Hazard Avoidance Camera                
-                </label>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraChemcam}" />
+                        <label class="form-check-lable" for="cameraChemcam1">
+                            Chemistry and Camera Complex
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraMahli}" />
+                        <label class="form-check-lable" for="cameraMahli1">
+                            Mars Hand Lens Imager
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraMardi}" />
+                        <label class="form-check-lable" for="cameraMardi1">
+                            Mars Descent Imager
+                        </label>
+                    </div>
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraMast}"/>
-                <label class="form-check-lable" for="cameraMast1">
-                    Mast Camera                
-                </label>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraNavcam}" />
+                        <label class="form-check-lable" for="cameraNavcam1">
+                            Navigation Camera
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraPancam}" />
+                        <label class="form-check-lable" for="cameraPancam1">
+                            Panoramic Camera
+                        </label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" th:field="${homeDto.cameraMinites}" />
+                        <label class="form-check-lable" for="cameraMinites1">
+                            Miniture Thermal Emission Spectrum (Mini-TES)
+                        </label>
+                    </div>
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraChemcam}"/>
-                <label class="form-check-lable" for="cameraChemcam1">
-                    Chemistry and Camera Complex                
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraMahli}"/>
-                <label class="form-check-lable" for="cameraMahli1">
-                    Mars Hand Lens Imager                
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraMardi}"/>
-                <label class="form-check-lable" for="cameraMardi1">
-                    Mars Descent Imager                
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraNavcam}"/>
-                <label class="form-check-lable" for="cameraNavcam1">
-                    Navigation Camera                
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraPancam}"/>
-                <label class="form-check-lable" for="cameraPancam1">
-                    Panoramic Camera                
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" th:field = "${homeDto.cameraPancam}"/>
-                <label class="form-check-lable" for="cameraPancam1">
-                    Panoramic Camera                
-                </label>
-            </div>
-          
             <div class="form-group">
                 <label for="marsSol" class="col-form-lable col-form-lable-lg">Mars Sol(Mars Day)</label>
-                <input class="form-control form-control-lg" type="number" th:field = "${homeDto.marsSol}" min="0"/>
+                <input class="form-control form-control-lg" type="number" th:field="${homeDto.marsSol}" min="0" />
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-             
-          </form>
+        </form>
 
-            <div th:each="index : ${#numbers.sequence(0,roverData.photos.size(), 4)}" class="row" style="margin-bottom: 2em;">
-                <div class="col" th:if="${index < roverData.photos.size()}">
-                    <img th:src="${roverData.photos[index].imgSrc}" class="img-fluid"/>
-                </div>
-                <div class="col" th:if="${index + 1 < roverData.photos.size()}">
-                    <img th:src="${roverData.photos[index + 1].imgSrc}" class="img-fluid"/>
-                </div>
-                <div class="col"  th:if="${index + 2 < roverData.photos.size()}">
-                    <img th:src="${roverData.photos[index + 2].imgSrc}" class="img-fluid"/>
-                </div>
-                <div class="col"  th:if="${index + 3 < roverData.photos.size()}">
-                    <img th:src="${roverData.photos[index + 2].imgSrc}" class="img-fluid"/>
-                </div>
-              </div>
-            
-            <!-- thymeleaf forloop to create multiple containers for photos form Json Array. -->
-            <!-- <img th:each="photo : ${roverData.photos}" th:src="${photo.imgSrc}"/>  -->
+        <div th:each="index : ${#numbers.sequence(0,roverData.photos.size(), 4)}" class="row"
+            style="margin-bottom: 2em;">
+            <div class="col" th:if="${index < roverData.photos.size()}">
+                <img th:src="${roverData.photos[index].imgSrc}" class="img-fluid" />
+            </div>
+            <div class="col" th:if="${index + 1 < roverData.photos.size()}">
+                <img th:src="${roverData.photos[index + 1].imgSrc}" class="img-fluid" />
+            </div>
+            <div class="col" th:if="${index + 2 < roverData.photos.size()}">
+                <img th:src="${roverData.photos[index + 2].imgSrc}" class="img-fluid" />
+            </div>
+            <div class="col" th:if="${index + 3 < roverData.photos.size()}">
+                <img th:src="${roverData.photos[index + 2].imgSrc}" class="img-fluid" />
+            </div>
         </div>
-        <script type="text/javascript" src="/js/index.js"></script>
-     </body>
+
+        <!-- thymeleaf forloop to create multiple containers for photos form Json Array. -->
+        <!-- <img th:each="photo : ${roverData.photos}" th:src="${photo.imgSrc}"/>  -->
+    </div>
+    <script type="text/javascript" src="/js/index.js"></script>
+</body>
+
 </html>
