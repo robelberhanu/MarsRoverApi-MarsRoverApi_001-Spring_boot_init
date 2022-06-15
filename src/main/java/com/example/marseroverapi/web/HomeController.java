@@ -34,6 +34,19 @@ public class HomeController {
         model.put("homeDto", homeDto);
         return "index";
     }
+    public String getHome(ModelMap model, HomeDto homeDto){
+        //if request param is empty, then set a default value
+        if(StringUtils.isEmpty(homeDto.getMarsApiRoverData())){
+            homeDto.setMarsApiRoverData("Opportunity");
+        }
+        if(homeDto.getMarsApiRoverData() == null)
+            homeDto.setMarsSol(1); 
+
+        MarsRoverApiResponse roverData = roverService.getRoverData(homeDto.getMarsApiRoverData(), homeDto.getMarsSol());
+        model.put("roverData", roverData);
+        model.put("homeDto", homeDto);
+        return "index";
+    }
 
 
     }
